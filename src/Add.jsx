@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Button.jsx';
 
 function Add({ onSalvar, onFechar }) {
   const [form, setForm] = useState({
@@ -28,8 +29,8 @@ function Add({ onSalvar, onFechar }) {
         <input name="diretor" placeholder="Diretor" onChange={handleChange} required />
         <input name="nota" placeholder="Nota" type="number" step="0.1" onChange={handleChange} required />
         <div className="botoes">
-          <button type="submit">Salvar</button>
-          <button type="button" onClick={onFechar}>Cancelar</button>
+          <Button texto="Salvar" type="submit" />
+          <Button texto="Cancelar" onClick={onFechar} />
         </div>
       </form>
     </div>

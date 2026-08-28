@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
-import Header from './Header';
-import List from './List';
-import Add from './Add';
+import Header from './Header.jsx';
+import List from './List.jsx';
+import Add from './Add.jsx';
 import './App.css';
 
 function App() {
   const [filmes, setFilmes] = useState([]);
   const [mostrarForm, setMostrarForm] = useState(false);
 
-  // Carrega do localStorage ao iniciar
   useEffect(() => {
     const dadosSalvos = localStorage.getItem('filmes');
     if (dadosSalvos) {
@@ -16,7 +15,6 @@ function App() {
     }
   }, []);
 
-  // Salva sempre que a lista mudar
   useEffect(() => {
     localStorage.setItem('filmes', JSON.stringify(filmes));
   }, [filmes]);
